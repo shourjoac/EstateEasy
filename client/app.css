@@ -1,5 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* Center vertically */
+    padding: 5px; /* Add some padding for better visual appearance */
+}
+.heading {
+    color: rgb(159, 222, 64);
+    font-weight: bold;
+	text-decoration: underline;
+    font-size: 50px;
+    text-align: center; /* Center the text horizontally */
+    margin-top: 10px; /* Add margin to position the heading */
+	margin-bottom: 20px;
+	padding-right:15px ;
+}
 .switch-field {
 	display: flex;
 	margin-bottom: 36px;
@@ -33,7 +51,7 @@
 }
 
 .switch-field input:checked + label {
-	background-color: #a5dc86;
+	background-color: rgb(159, 222, 64);
 	box-shadow: none;
 }
 
@@ -52,12 +70,18 @@
 	line-height: 1.625;
 	margin: 8px auto;
 	padding-left: 16px;
-	z-index: 2;
+	z-index: 1;
 }
 
 h2 {
 	font-size: 18px;
 	margin-bottom: 8px;
+	color:#e4e4e4;
+	text-decoration-line: underline;
+}
+h2:hover {
+	color:rgb(159, 222, 64);
+
 }
 .area{
   font-family: "Roboto", sans-serif;
@@ -86,8 +110,101 @@ h2 {
   height: 40px;
   border-radius: 5px;
 }
-
-.submit{
+.location:hover{
+	background:rgb(159, 222, 64);
+	opacity: 0.5;
+  }
+/* start */
+.submit {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 16px 36px;
+	border: 4px solid;
+	border-color: transparent;
+	font-size: 16px;
+	background-color: inherit;
+	border-radius: 100px;
+	font-weight: 600;
+	color: rgb(241, 244, 236);
+	box-shadow: 0 0 0 2px rgb(241, 243, 238);
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	margin-top: 10px;
+  }
+  
+  .submit svg {
+	position: absolute;
+	width: 24px;
+	fill: greenyellow;
+	z-index: 9;
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .submit .arr-1 {
+	right: 16px;
+  }
+  
+  .submit .arr-2 {
+	left: -25%;
+  }
+  
+  .submit .circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 20px;
+	height: 20px;
+	background-color: rgb(238, 242, 232);
+	border-radius: 50%;
+	opacity: 0;
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .submit .text {
+	position: relative;
+	z-index: 1;
+	transform: translateX(-12px);
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .submit:hover {
+	box-shadow: 0 0 0 12px rgb(159, 222, 64);
+	color: rgb(159, 222, 64);
+	border-radius: 4px;
+  }
+  
+  .submit:hover .arr-1 {
+	right: -25%;
+  }
+  
+  .submit:hover .arr-2 {
+	left: 16px;
+  }
+  
+  .submit:hover .text {
+	transform: translateX(12px);
+  }
+  
+  .submit:hover svg {
+	fill: #212121;
+  }
+  
+  .submit:active {
+	scale: 0.95;
+	box-shadow: 0 0 0 4px rgb(159, 222, 64);
+  }
+  
+  .submit:hover .circle {
+	width: 220px;
+	height: 220px;
+	opacity: 1;
+  }
+  
+/* .submit{
   background: #a5dc86;
   width: 76%;
   border: 0;
@@ -97,22 +214,123 @@ h2 {
 	height: 35px;
 	text-align: center;
 	border-radius: 5px;
-}
+} */
 
-.result{
-		background: #dcd686;
-		width: 76%;
-		border: 0;
-		margin: 25px 0 10px;
+/* end */
+/* .result{
+		background: inherit;
+		border-radius: 10px;
+		width: 74%;
+		border-color: transparent;
+		border-width: 2px;
+		margin: 30px 0 10px;
 		box-sizing: border-box;
 		font-size: 15px;
-		height: 35px;
+		height: 45px;
 		text-align: center;
-}
+		opacity: 1;
+		box-shadow: 0 0 0 2px rgb(238, 241, 233);
 
+}
+.result:hover{
+	color: rgb(159, 222, 64);
+	opacity: 0.8;
+	border-color: rgb(22, 105, 160);
+	box-shadow: 0 0 0 2px rgb(159, 222, 64);
+} */
+.result {
+	position: relative;
+	text-align: center;
+	/* height:40px; */
+	padding: 16px;
+	border: 4px solid;
+	border-color: transparent;
+	font-size: 16px;
+	background-color: inherit;
+	border-radius: 100px;
+	font-weight: 600;
+	color: rgb(241, 244, 236);
+	box-shadow: 0 0 0 2px rgb(241, 243, 238);
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	margin-top: 20px;
+	margin-right: 70px;
+	visibility: hidden;
+	margin-left:20px;
+  }
+  
+  .result svg {
+	position: absolute;
+	width: 24px;
+	fill: greenyellow;
+	z-index: 9;
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .result .arr-1 {
+	right: 16px;
+  }
+  
+  .result .arr-2 {
+	left: -25%;
+  }
+  
+  .result .circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 20px;
+	height: 20px;
+	background-color: rgb(238, 242, 232);
+	border-radius: 50%;
+	opacity: 0;
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .result .text {
+	position: relative;
+	z-index: 1;
+	transform: translateX(-12px);
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .result:hover {
+	box-shadow: 0 0 0 12px rgb(159, 222, 64);
+	color: rgb(159, 222, 64);
+	border-radius: 4px;
+  }
+  
+  .result:hover .arr-1 {
+	right: -25%;
+  }
+  
+  .result:hover .arr-2 {
+	left: 16px;
+  }
+  
+  .result:hover .text {
+	transform: translateX(12px);
+  }
+  
+  .result:hover svg {
+	fill: #212121;
+  }
+  
+  .result:active {
+	scale: 0.95;
+	box-shadow: 0 0 0 4px rgb(159, 222, 64);
+  }
+  
+  .result:hover .circle {
+	width: 220px;
+	height: 220px;
+	opacity: 1;
+  }
 .img {
-  background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-	background-repeat: no-repeat;
+  background: url('https://media.gettyimages.com/id/1474319542/video/a-single-line-animation-of-a-home-drawing-conveys-the-concepts-of-real-estate-homeownership.jpg?s=640x640&k=20&c=z_9alOV09WsZMo8oYftlP6x2JZJpVQsM5iyrV7k6TKo=');
+  background-repeat: no-repeat;
   background-size: auto;
   background-size:100% 100%;
   -webkit-filter: blur(5px);
